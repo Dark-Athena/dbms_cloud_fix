@@ -7113,14 +7113,18 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY C##CLOUD$SERVICE.dbms_cloud AS
     -- l_invoker_schema   := l_context.get_string('invoker_schema');
     l_credential_name := l_context.get_string('credential_name');
     l_file_uri        := l_context.get_string('file_uri');
-    --  l_file_extension   := l_context.get_string('fileextension');
-    -- l_compression      := l_context.get_string(FORMAT_COMPRESSION);
+    l_file_extension   := l_context.get_string('fileextension');
+    DBMS_OUTPUT.put_line(l_file_extension);
+    
+    l_compression      := l_context.get_string(FORMAT_COMPRESSION);
     l_record_delimiter := l_context.get_string(FORMAT_RECORD_DELIMITER);
     -- l_max_file_size    := l_context.get_number('maxfilesize');
+ 
     dbms_cloud.put_object(credential_name => l_credential_name,
-                          object_uri      => l_file_uri,
+                          object_uri      => l_file_uri||l_file_extension,
                           contents        => refcursor_to_BLOB(refcursor,
-                                                               l_record_delimiter));
+                                                               l_record_delimiter),
+                          compression =>l_compression );
     RETURN;
   end export_rows_tabfunc;
   -----------------------------------------------------------------------------
