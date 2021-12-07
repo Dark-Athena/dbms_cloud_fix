@@ -1,6 +1,7 @@
 # 个人修改DBMS_CLOUD包以在非自治数据库支持EXPORT_DATA功能
 
 ## 项目地址：
+https://github.com/Dark-Athena/dbms_cloud_fix
 
 ## 声明：
 本补丁制作目的为学习，非商业行为，制作过程未对ORACLE公司旗下产品产生任何反编译及破解行为，如有使用本代码引起的被ORACLE投诉侵权，本人概不负责。
