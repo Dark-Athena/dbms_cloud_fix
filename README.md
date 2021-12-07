@@ -54,12 +54,12 @@ export_data_xform_query函数中的xml类型sql转换进行了微调，
 自治数据库随时都可能有代码维护，变动很频繁，没准哪天oracle神不知鬼不觉的就把这些未启用的变量给用上了，所以本补丁也不会时刻保持跟进
 
 ## 安装方法
-请先按官方文档安装完dbms_cloud_install.sql后再打本补丁
-[How To Setup And Use DBMS_CLOUD Package (Doc ID 2748362.1)](https://support.oracle.com/epmos/faces/DocContentDisplay?id=2748362.1)
-如果无查看mos文档的权限，也可参考Tim Hall的文章来安装官方的dbms_cloud_install.sql
-[DBMS_CLOUD : Installation on 19c and 21c On-Prem Databases](https://oracle-base.com/articles/21c/dbms_cloud-installation)
+请先按官方文档安装完dbms_cloud_install.sql后再打本补丁  
+[How To Setup And Use DBMS_CLOUD Package (Doc ID 2748362.1)](https://support.oracle.com/epmos/faces/DocContentDisplay?id=2748362.1)  
+如果无查看mos文档的权限，也可参考Tim Hall的文章来安装官方的dbms_cloud_install.sql  
+[DBMS_CLOUD : Installation on 19c and 21c On-Prem Databases](https://oracle-base.com/articles/21c/dbms_cloud-installation)  
 
-以下为打本补丁的命令参考
+以下为打本补丁的命令参考  
 ```
 cd /u03/dbms_cloud_from_adb
 
@@ -72,7 +72,7 @@ $ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catcon.pl \
   dbms_cloud_from_adb_install.sql
 ```
 
-注意CDB打完补丁后可能需要重启数据库(PDB)才能生效新的plsql包
+注意CDB打完补丁后可能需要重启数据库(PDB)才能生效新的plsql包  
 
 ## 相关文章
 [【ORACLE】使用DBMS_CLOUD包对京东云对象存储服务OSS进行操作及创建外部表](https://a.darkathena.top/archives/dbmscloudjdcloudoss)
