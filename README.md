@@ -25,9 +25,9 @@ EXPORT_DATA的format参数支持（兼容原版）
  
 其中DBMS_CLOUD_FIX.sql为本人手动修正的代码，不保证和自治数据库一致（自治数据库无sys权限，部分代码和数据无法看到）  
 经核实官方代码，由于非自治数据库的19.13版本内置C语言函数未更新，
->LANGUAGE C
-LIBRARY sys.dbms_pdb_lib
-NAME "kpdbocExportRows"
+>LANGUAGE C  
+LIBRARY sys.dbms_pdb_lib  
+NAME "kpdbocExportRows"  
 
 所以打了自治数据库的DBMS_CLOUD包仍然无法执行export_data。
 但由于目前自治数据库的plsql代码已经很完善了(之前代码有大量缺失)，所以我修改了dbms_cloud的代码，借用put_object(content)实现export_data。
