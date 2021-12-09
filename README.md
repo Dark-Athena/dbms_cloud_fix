@@ -43,7 +43,12 @@ export_data_xform_query函数中的xml类型sql转换进行了微调，
 暂不支持的format参数
 - maxfilesize 最大文件大小
 
- 
+format_type 暂不支持DATAPUMP ,在自治数据库中可以使用{"type" : "DATAPUMP"}参数来输出dmp文件,但本地数据库执行后会报错,此报错与本补丁无关,  
+>ORA-29913: 执行 ODCIEXTTABLEOPEN 调出时出错  
+ORA-29400: 数据插件错误KUP-06006: 置入模式中不支持 CREDENTIAL 访问参数。  
+
+如需将DATAPUMP文件上云,请先用dbms_datapump生成文件后,再使用dbms_cloud.put_object
+
 私有变量ROWS_PER_FETCH未启用，原功能是在C语言函数中使用此变量，对json进行分批处理(之前我也遇到过大批量数据转json的效率问题)。  
 本修改版为一次性查到内存再上传，如果分包上传的话，对原功能的修改量会比较大，不方便维护。   
 
